@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django import HttpResponse
 
+from django.views.generic import TemplateView
+
+
+class HomePageView(TemplateView):
+    template_name =  ('citytrainer.html') 
 
 
 # Create your views here.

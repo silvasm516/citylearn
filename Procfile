@@ -1,1 +1,1 @@
-web: gunicorn citylearn.citylearn.wsgi --log-file -
+web: gunicorn citylearn.citylearn.wsgi 

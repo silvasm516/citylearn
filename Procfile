@@ -1,1 +1,3 @@
-web: gunicorn citylearn.citylearn.wsgi 
+ 
+
+web: gunicorn citylearn:app

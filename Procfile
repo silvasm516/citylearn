@@ -1,3 +1,3 @@
  
 
-web: gunicorn citylearn:app
+web: gunicorn citylearn:application

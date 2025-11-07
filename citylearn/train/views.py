@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 
 
 class HomePageView(TemplateView):
-    template_name =  ('citytrainer.html') 
+    template_name =  ('modcities.html') 
 
 
 # Create your views here.

@@ -6,21 +6,23 @@
 
 
 <!DOCTYPE html>
+{% extends "base.html" %}
 <html lang="en">
 <head>
-  <title>Capitals Trainer</title>
+  <!-- <title>Capitals Trainer</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" type="text/css" href="https://storage.cloud.google.com/capitals-trainer/star.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <!-- <script type="text/javascript" src= "Africa.js"></script> -->
-  <link rel= "https://console.cloud.google.com/storage/browser/capitals-trainer/Africa.json">
+ <!--  <link rel= "https://console.cloud.google.com/storage/browser/capitals-trainer/Africa.json">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <!-- <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css> --> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="http -->s://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!-- <script src="https://storage.cloud.google.com/capitals-trainer/Africa.json" type="application/json"></script> -->
+  {% block homStyle %}
   <style>
    #con1 {
      background-color:lightgray;
@@ -46,37 +48,50 @@
     background-color:lightcoral;
   }
 
-#op {
+  #butbar  {
+    margin-top: 10%;
+	}
+  #demo  {
+  visiblity: hidden
+  }
+
+
+<!-- #op {
   visibility: hidden;
-}
+} -->
 
   #clear{
   color:black;
   background-color: yellow;
+  
+  padding-top: 0;
+  padding-bottom: 0;
   }
-
  .but {
  background-color: green;
  color: white;
  
 }
  #ans {
-  visibility: hidden;
+  visiblity: hidden:
+  padding-bottom: 0;
+  padding-top: 0;
   }
 
   body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-
+  padding: 0, 0, 0, 0;
 }
 .col-sm-4  {
-padding 0,0,0,0;
+ padding 0,0,0,0;
 
 }
   </style>
-
+{% endblock %}
   `` 
 </head>
+{% block hom %}
 <body>
 
 
@@ -91,19 +106,24 @@ padding 0,0,0,0;
 <div class="container text-center" id= "con2"> 
   <div class="row">
     <div class="col-sm-4">
-      <p><h5>Press Random For A Nation<h5></p>
+	 <div id="butbar">
+       
+      <h3><p id="demo" style="visibility: hidden" >firstly</p><h3>
+      <!-- <br> -->
+      <h3><p id="ans" style="visibility: hidden">secondly</p></h3>
+      
+        <br>
+      <p id="op">blank</p>
+	 
+	 <p><h5>Press Random For A Nation<h5></p>
       <h3> <div>
       <button type="button" onclick= "random()" class="but" id="Randm">Random</button>
       <button type="button" onclick= "answer()" class="but">Answer</button>
       <button type="button" onclick= "clean()" class="but" id="clear">Clear</button>
-      <p></p> 
-      <h3><p id="demo"></p><h3>
-      <!-- <br> -->
-      <h3><p id="ans"></p></h3>
-      </div><h3>
-        <br>
-      <p id="op"></p>
-    </div>
+      <p></p>  
+	  </div>
+	  </div>
+	  </div>
     <div class="col-sm-1"> 
       <!-- <p><h1><h1></p> -->
       
@@ -131,16 +151,23 @@ padding 0,0,0,0;
    </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<!-- <footer class="container-fluid text-center">
+  <p></p>
 </footer>
-<header Content-Type: text/javascript/>
+<header Content-Type: text/javascript/> -->
 
 
 
 
 </body>
+{% endblock %} 
+<br>
+<container class="container-fluid text-center"> 
  
+  <!-- {% include 'Footer98.html' %} -->
+   
+</container>
+{% block scripts %}
 <script>
 const Afr = {'Algeria':'Algiers',
 'Angola':'Luanda',
@@ -227,7 +254,7 @@ const Amer= {'Antigua and Barbuda':'Saint Johns',
 'Peru':'Lima',
 'Saint Kitts and Nevis':'Basseterre',
 'Saint Lucia':'Castries',
-'Saint Vincent and the Grenadines':'Kingstown',
+'Saint Vincent & the Grenadines':'Kingstown',
 'Suriname':'Paramaribo',
 'Trinidad and Tobago':'Port of Spain',
 'United States':'Washington D.C.',
@@ -570,7 +597,7 @@ function random() {
     var max 
     var min;
     var oc = document.getElementById("op").innerHTML;   
-     window.alert(oc);
+    // window.alert(oc);
   
    if(oc === "value1") {
     var max = 34
@@ -580,6 +607,7 @@ function random() {
     var B = ran;
     const chanceKey = C[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var L = Amer[chanceKey];
     document.getElementById("ans").innerHTML= L;
      // window.alert(C);
@@ -593,6 +621,7 @@ function random() {
     var B = ran;
     const chanceKey = D[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var M = Afr[chanceKey];
     document.getElementById("ans").innerHTML= M;
      // window.alert(D);
@@ -607,6 +636,7 @@ function random() {
     var B = ran;
     const chanceKey = E[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var N = Ocen[chanceKey];
     document.getElementById("ans").innerHTML= N;
     // window.alert(max);
@@ -620,6 +650,7 @@ function random() {
     var B = ran;
     const chanceKey = F[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var O = Eur[chanceKey];
     document.getElementById("ans").innerHTML= O;
     // window.alert(max);
@@ -635,6 +666,7 @@ function random() {
     var B = ran;
     const chanceKey = G[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var P = Asia[chanceKey];
     document.getElementById("ans").innerHTML= P;
     // window.alert(max);
@@ -649,6 +681,7 @@ function random() {
     var B = ran;
     const chanceKey = H[B];
     document.getElementById("demo").innerHTML = chanceKey;
+	document.getElementById("demo").style.visibility = "visible";
     var Q = Cap[chanceKey];
     document.getElementById("ans").innerHTML= Q;
     //window.alert(max); 
@@ -666,8 +699,9 @@ function answer() {
 }
 
 function clean() {
- document.getElementById("demo").innerHTML = null;
- document.getElementById("ans").innerHTML= null;
+ <!-- document.getElementById("demo").innerHTML = null;
+ <!-- document.getElementById("ans").innerHTML= null;  -->
+ document.getElementById("demo").style.visibility = "hidden"; 
  document.getElementById("ans").style.visibility = "hidden"; 
 }
 
@@ -676,4 +710,5 @@ function clean() {
 
 
 </script>
+{% endblock %}
 </html>

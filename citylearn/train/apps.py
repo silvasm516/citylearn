@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class TrainConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'train'
-    #name = 'citylearn.application'
+    #name = 'train.application'

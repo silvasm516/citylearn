@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'train.wsgi.application'
+WSGI_APPLICATION = 'citylearn.wsgi.application'
 
 
 # Database

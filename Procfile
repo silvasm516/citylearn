@@ -1,3 +1,5 @@
  
 
-web: gunicorn citylearn:application
+web:gunicorn citylearn.wsgi 
+
+

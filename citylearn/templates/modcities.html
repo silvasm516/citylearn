@@ -111,9 +111,9 @@
     <div class="col-sm-4">
 	 <div id="butbar">
        
-      <h3><p id="demo" style="visibility: hidden" >firstly</p><h3>
+      <h2><p id="demo" style="visibility: hidden" >firstly</p><h2>
       <!-- <br> -->
-      <h3><p id="ans" style="visibility: hidden">secondly</p></h3>
+      <h2><p id="ans" style="visibility: hidden">secondly</p></h2>
       
         <br>
       <p id="op">blank</p>
@@ -604,7 +604,12 @@ function random() {
     var min;
     var oc = document.getElementById("op").innerHTML;   
     // window.alert(oc);
-  
+  if(oc === 'blank'){
+          window.alert("Please Select A Regiom From The Menu");
+         
+          return
+    } 
+
    if(oc === "value1") {
     var max = 34
     var min = 0

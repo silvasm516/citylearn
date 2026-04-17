@@ -9,6 +9,15 @@
 {% extends "base.html" %}
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SXDSY4RTK1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SXDSY4RTK1');
+</script>
   <!-- <title>Capitals Trainer</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" type="text/css" href="https://storage.cloud.google.com/capitals-trainer/star.png">
@@ -29,8 +38,6 @@
      font-family: Arial;
      color: black;
  } 
-
-   
   
 
   .but {
@@ -59,7 +66,7 @@
   }
 
 
-  #op {
+ #op {
   visibility: hidden;
 } 
 
@@ -82,7 +89,7 @@
   }
 
   body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica;
   font-weight: bold;
   padding: 0, 0, 0, 0;
 }
@@ -138,12 +145,12 @@
     <li>2. Press Random button to view nation.</li>
     <li>3. Try to name the capital city.</li>
     <li>4. Press the Answer button to confirm.</li>
-    <li>5. Press Clear.
+    <li>5. Press Cleear.
   </ul>
   </div>
   <div class="well" id="menhu">
    <p>Train For (select region)<p>
-    <form id="myRadioForm">
+    <!-- <form id="myRadioForm">
         <input type="radio" id="option1" name="myOptions" value="value1">
         <label for="option1">Americas</label>
         <input type="radio" id="option2" name="myOptions" value="value2">
@@ -156,11 +163,53 @@
         <label for="option5">Asia</label>
         <input type="radio" id="option6" name="myOptions" value="value6">
         <label for="option6">World</label>
+    </form> -->
+	<form id="myRadioForm">
+        <label>
+         <input type="radio" id="option1" name="myOptions" value="value1">Americas
+       </label>
+        <label>
+        <input type="radio" id="option2" name="myOptions" value="value2">Africa
+        </label>
+        <label>
+        <input type="radio" id="option3" name="myOptions" value="value3">Oceania
+        </label>
+        <label>
+        <input type="radio" id="option4" name="myOptions" value="value4">Europe
+       </label>
+        <label>
+        <input type="radio" id="option5" name="myOptions" value="value5">Asia
+        </label>
+        <label>
+        <input type="radio" id="option6" name="myOptions" value="value6">World
+        </label>   
     </form>
    </div>
 </div>
 
+<div class="modal" id="barnModal" tabindex="-1" role="dialog" aria-labelledby="barnModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="barnModalLabel">Select Region</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        "this is the content"
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- <div id="myDialog" title="Dialog Title">
+  <p>This is a jQuery UI modal dialog.</p>
+</div> -->
 
 
 
@@ -585,7 +634,7 @@ const Cap = {'Afghanistan' : 'Kabul',
 'Zambia' : 'Lusaka',
 'Zimbabwe' : 'Harare'}
 const radioForm = document.getElementById("myRadioForm");
-
+  
   radioForm.addEventListener('change', (event) => {
     // event.target will be the specific radio button that was changed
     if (event.target.name === "myOptions" && event.target.checked) { // Ensure it's part of your radio group
@@ -594,6 +643,14 @@ const radioForm = document.getElementById("myRadioForm");
     }
   });
 
+
+
+
+
+
+
+    
+  
 
 
 
